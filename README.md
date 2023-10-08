@@ -7,9 +7,9 @@ This is a repo that I will use to learn github.
 
 ### Part 1: Imaging Technique Inspiration
 
-Steven Lindburger’s 1982 film, *Tron*, is set inside a video game, and is known as the earliest major film to use CG animation. 
+Steven Lindburger’s 1982 film, *Tron*, is set inside a video game, and is known for its groundbreaking use of CG animation. 
 
-Towards the end of the official trailer for *Tron*, the camera zooms out from a black space filled with pixelated layers of computer-generated shapes, revealing increasing numbers of shape layers suspended in the space. 
+Towards the end of the official trailer for *Tron* (), the camera zooms out from a black space filled with pixelated layers of computer-generated shapes, revealing increasing numbers of shape layers suspended in the space. 
 
 ![Screenshot from *Tron* #1](readmeImages/Screen%Shot%2023-10-07%at%12.41.16%pm.png) 
 
