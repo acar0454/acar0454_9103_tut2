@@ -1,8 +1,6 @@
 // Define the initial variables for the position and size of the brush:
 let brushX;
 let brushY;
-// Name variable for size of brush:
-//let size;
 
 function setup() {
 createCanvas(600, 600);
@@ -17,7 +15,7 @@ brushY = 0;
 
 function draw() {
 colorMode(HSB);
-fill(random(360), random(100), random(300), 200);
+fill(random(360), random(100), random(300), 255);
 
 // Translate the origin to the center of the canvas:
 translate(width/2, height/2);
@@ -42,8 +40,8 @@ let sector = 70;
   pop();
   }
 // Increment the position of brush over time - add some randomness to the brush path
-brushX += random(10, 50);
-brushY += 15;
+brushX += random(-30, 30);
+brushY += 10;
 }
 
 function brushPainting(x, y) {
@@ -51,7 +49,6 @@ function brushPainting(x, y) {
 // start and restore the drawing state.
 push();
 translate(x, y);
-//let size = 30;
-rect(0, 0, 30, 10);
+rect(0, 0, 30, 30);
 pop();
 }
