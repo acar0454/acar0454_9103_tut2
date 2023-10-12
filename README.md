@@ -12,6 +12,7 @@ Steven Lindburger’s 1982 film, *Tron*, is set inside a video game, and is know
 Towards the end of the official trailer for *Tron*, the camera zooms out from a black space filled with pixelated layers of computer-generated shapes, revealing increasing numbers of shape layers suspended in the space. 
 
 ![Screenshot from *Tron* #1](readmeImages/Tron1.png) 
+
 ![Screenshot from *Tron* #2](readmeImages/Tron2.png)
 
 Incorporating the dynamic, colourful and energetic feel of these stills in the major coding project would provide interest, depth and animation to Mondrian’s *Broadway Boogie Woogie*. Both the painting and stills are reminiscent of an aerial view of a bustling city, providing a conceptual framework for the major project. 
