@@ -16,7 +16,7 @@ Towards the end of the official trailer for *Tron*, the camera zooms out from a 
 
 Incorporating the dynamic, colourful and energetic feel of these stills in the major coding project would provide interest, depth and animation to Mondrian’s *Broadway Boogie Woogie*. Both the painting and stills are reminiscent of an aerial view of a bustling city, providing a conceptual framework for the major project. 
 
-![*Broadway Boogie Woogie* by Piet Mondrian](readmeImages/Piet_Mondrian%Broadway_Boogie_Woogie.jpeg)
+![*Broadway Boogie Woogie* by Piet Mondrian](readmeImages/Piet_Mondrian_Broadway_Boogie_Woogie.jpeg)
 
 ### Part 2: Coding Technique Exploration
 
