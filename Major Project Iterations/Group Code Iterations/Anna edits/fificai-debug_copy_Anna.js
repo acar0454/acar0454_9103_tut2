@@ -6,8 +6,8 @@
 let number = 30;
 let rectSpacing = 10;
 const numberOfYellow = 8;
-const colors = ['#d2d1c1', '#4468bc', '#a4362a'];
-const colors2 = ['#e9d22b', '#4468bc', '#a4362a'];
+const colors = ['#11077a', '#0a2ac9', '#0a4dc9'];
+const colors2 = ['#042f4d', '#08548a', '#0a7ac9'];
 
 // Create arrays to store multiple classes of rectangles:
 let rectangles = [];
@@ -16,31 +16,31 @@ let rectanglesBig = [];
 function setup() {
   resizeCanvas(windowWidth, windowHeight);
 
-  background('#f2f3ee');
+  background('#03011a');
 
   let y1 = random(0, 150);
   let y2 = y1;
 
   // Top four yellow lines:
   for (let i = 0; i < 4; i++) {
-    let yellowRectangle = new Rectangle(0, i * y1, windowWidth, 15, '#e9d22b');
+    let yellowRectangle = new Rectangle(0, i * y1, windowWidth, 15, '#042f4d');
     rectangles.push(yellowRectangle);
   }
   // Last four horizontal yellow lines:
   for (let i = 0; i < 4; i++) {
-    let yellowRectangle = new Rectangle(0, 250 + i * y1 * 2, windowWidth, 15, '#e9d22b');
+    let yellowRectangle = new Rectangle(0, 250 + i * y1 * 2, windowWidth, 15, '#042f4d');
     rectangles.push(yellowRectangle);
   }
 
 
   // Left three vertical yellow lines:
   for (let i = 0; i < 3; i++) {
-    let yellowRectangle = new Rectangle(i * y1, 0, 15, windowHeight, '#e9d22b');
+    let yellowRectangle = new Rectangle(i * y1, 0, 15, windowHeight, '#042f4d');
     rectangles.push(yellowRectangle);
   }
   // Right three vertical yellow lines:
   for (let i = 0; i < 3; i++) {
-    let yellowRectangle = new Rectangle(250 + i * y1 * 2, 0, 15, windowHeight, '#e9d22b');
+    let yellowRectangle = new Rectangle(250 + i * y1 * 2, 0, 15, windowHeight, '#042f4d');
     rectangles.push(yellowRectangle);
   }
 
