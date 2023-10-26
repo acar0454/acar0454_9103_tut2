@@ -1,4 +1,3 @@
-
 let number = 30;
 let rectSpacing = 10;
 const numberOfyellow = 8;
