@@ -62,4 +62,7 @@ function rectPainting(x, y) {
 }
 
 
-// Referenced https://github.com/processing/p5.js/wiki/Positioning-your-canvas, https://www.learnui.design/blog/the-hsb-color-system-practicioners-primer.html,  
+// Inspiration from/reference to:
+// --> https://github.com/processing/p5.js/wiki/Positioning-your-canvas
+// --> https://www.learnui.design/blog/the-hsb-color-system-practicioners-primer.html
+// --> https://p5js.org/reference/#/p5/lerpColor 
