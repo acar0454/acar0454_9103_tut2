@@ -1,13 +1,12 @@
 // Define the initial variables for the position and size of the brush:
 let rectX;
 let rectY;
-//let rectSize;
-//let easing = 0.05;
+let brushSize;
 
 function setup() {
   createCanvas(600, 600);
   background(255);
-  frameRate(5);
+  frameRate(9);
   noStroke();
 
   // Give the brush a starting position:
@@ -16,24 +15,18 @@ function setup() {
 }
 
 function draw() {
-  colorMode(HSBA);
-  fill(random(360), 70, 160, 80);
-
-  // Give the brush a starting and ending position by initialising variables:
-  // let x = lerp(startX, endX, t);
-  // let y = lerp(startY, endY, t);
-
-  // Update interpolation factor with easing function:
-  // t += (1-t) * 0.05;
+  colorMode(HSB);
+  fill(random(360), 70, 160, 10);
 
   // Translate the origin to the center of the canvas:
   translate(width / 2, height / 2);
 
   // Define the number of sectors
-  let sector = 20;
+  let sector = 30;
   // Use 'for' loops to create sets of patterns;
   for (let i = 0; i < sector; i++) {
-    rectMode(CENTER);
+    rectMode(RADIUS);
+    angleMode(DEGREES);
     let angle = 360 / sector;
     // Use rotate function here to rotate the sectors:
     rotate(angle);
@@ -49,12 +42,8 @@ function draw() {
     pop();
   }
   // Increment the position of brush over time - add some randomness to the brush path:
-  // startX += random(20, 10);
-  // startY += 10;
-  // endX += random(20, 10);
-  // endY += 10;
   rectX += random(-20, 20);
-  rectY += random(5);
+  rectY += 7;
 }
 
 function rectPainting(x, y) {
@@ -62,6 +51,7 @@ function rectPainting(x, y) {
   // start and restore the drawing state.
   push();
   translate(x, y);
-  rect(0, 0, 50, 50);
+  let brushSize = 20;
+  ellipse(0, 0, brushSize);
   pop();
 }
