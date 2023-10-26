@@ -1,10 +1,12 @@
 // Define the initial variables for the position and size of the brush:
 let rectX;
 let rectY;
-let brushSize;
 
 function setup() {
-  createCanvas(600, 600);
+  let canvas = createCanvas(400, 400);
+  let canvasXPos = (windowWidth - width) / 2;
+  let canvasYPos = (windowHeight - height) / 2;
+  canvas.position(canvasXPos,canvasYPos);
   background(255);
   frameRate(9);
   noStroke();
@@ -16,13 +18,15 @@ function setup() {
 
 function draw() {
   colorMode(HSB);
-  fill(random(360), 70, 160, 10);
 
-  // Translate the origin to the center of the canvas:
+  // Linear interpolation of hue, saturation and brightness to create more pleasing colour scheme:
+  fill(lerp(200, 360, random()), lerp(50, 95, random()), lerp(100, 220, random()));
+
+  // Translate the origin to the centre of the canvas (the canvas now in the centre of the page):
   translate(width / 2, height / 2);
 
   // Define the number of sectors
-  let sector = 30;
+  let sector = 25;
   // Use 'for' loops to create sets of patterns;
   for (let i = 0; i < sector; i++) {
     rectMode(RADIUS);
@@ -42,8 +46,8 @@ function draw() {
     pop();
   }
   // Increment the position of brush over time - add some randomness to the brush path:
-  rectX += random(-20, 20);
-  rectY += 7;
+  rectX += random(-5, 10);
+  rectY += 5;
 }
 
 function rectPainting(x, y) {
@@ -51,7 +55,11 @@ function rectPainting(x, y) {
   // start and restore the drawing state.
   push();
   translate(x, y);
-  let brushSize = 20;
-  ellipse(0, 0, brushSize);
+  let rectWidth = lerp(8, 10, 0.5);
+  let rectHeight = lerp(14, 20, 0.5);
+  rect(0, 0, rectWidth, rectHeight);
   pop();
 }
+
+
+// Referenced https://github.com/processing/p5.js/wiki/Positioning-your-canvas, https://www.learnui.design/blog/the-hsb-color-system-practicioners-primer.html,  
