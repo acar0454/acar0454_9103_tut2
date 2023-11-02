@@ -5,16 +5,21 @@ let rectSpacing = 10;
 // // Add code to allow for responsive resizing of canvas to width and height of browser window:
 // let imageProps = {aspect: 0, width: 0, height: 0, xOffset: 0, yOffset: 0}; // Object made to hold the draw properties of the image
 // let canvasAspectRatio = 0; // Variable for canvas aspect ratio
-const numberOfyellow = 8;
-const colors = ['#d2d1c1', '#4468bc', '#a4362a'];
-const colors2 = ['#e9d22b', '#4468bc', '#a4362a'];
+const numberOfyellow = 8; 
+const colors = ['#08527d', '#1678A2', '#093169'];
+const colors2 = ['#Bffbfd', '#083360', '#2a91a4'];
 
 // Use arrays to store multiple classes of rectangles:
 let rectangles = [];
 let rectanglesBig = [];
 
+// // Create variables to store original artwork width and height:
+// let artworkWidth;
+// let artworkHeight;
+
 function setup() {
-  background('#f2f3ee');
+  background('#000a0c');
+  // createCanvas(windowWidth, windowHeight);
 
   // Add button for user to turn on music: 
   //   button = createButton('Get jazzy!');
@@ -27,12 +32,7 @@ function setup() {
   //   background(val);
   // }
   
-  // resizeCanvas(windowWidth, windowHeight);
-  // // Add code to allow for responsive resizing of canvas to width and height of canvas:
-  // imageProps.aspect = image.width / image.height
-  // canvasAspectRatio = width / height;
-  // calculateImageProps();
-
+  // // Add function to calculate image (artwork) properties:
   // function calculateImageProps() {
   //   //// If the image is wider than the canvas
   //   if (imageProps.aspect > canvasAspectRatio) {
@@ -59,30 +59,41 @@ function setup() {
   //   }
   // }
 
+  // resizeCanvas(windowWidth, windowHeight);
+  // Add code to allow for responsive resizing of canvas to width and height of canvas:
+  // imageProps.aspect = image.width / image.height
+  // canvasAspectRatio = width / height;
+  // calculateImageProps();
+
+  // function resizeCanvas {
+    
+  //}
+
+
   let y1 = random(0, 150);
   let y2 = y1;
 
-  // Top four yellow lines
+  // Four lines at top of window:
   for (let i = 0; i < 4; i++) {
-    let yellowRectangle = new Rectangle(0, i * y1, windowWidth, 15, '#e9d22b');
-    rectangles.push(yellowRectangle);
+    let aquaRectangle = new Rectangle(0, i * y1, windowWidth, 15, '#Bffbfd');
+    rectangles.push(aquaRectangle);
   }
-  // Last four horizontal yellow lines
+  // Four horizontal lines:
   for (let i = 0; i < 4; i++) {
-    let yellowRectangle = new Rectangle(0, 250 + i * y1 * 2, windowWidth, 15, '#e9d22b');
-    rectangles.push(yellowRectangle);
+    let aquaRectangle = new Rectangle(0, 250 + i * y1 * 2, windowWidth, 15, '#Bffbfd');
+    rectangles.push(aquaRectangle);
   }
 
 
-  // Left three vertical yellow lines
+  // Three vertical lines to left of window:
   for (let i = 0; i < 3; i++) {
-    let yellowRectangle = new Rectangle(i * y1, 0, 15, windowHeight, '#e9d22b');
-    rectangles.push(yellowRectangle);
+    let aquaRectangle = new Rectangle(i * y1, 0, 15, windowHeight, '#Bffbfd');
+    rectangles.push(aquaRectangle);
   }
-  // Right three vertical yellow lines
+  // Three vertical lines to right of window:
   for (let i = 0; i < 3; i++) {
-    let yellowRectangle = new Rectangle(250 + i * y1 * 2, 0, 15, windowHeight, '#e9d22b');
-    rectangles.push(yellowRectangle);
+    let aquaRectangle = new Rectangle(250 + i * y1 * 2, 0, 15, windowHeight, '#Bffbfd');
+    rectangles.push(aquaRectangle);
   }
 
   // Random small blocks
@@ -212,6 +223,7 @@ function setup() {
     rectanglesBig.push(new Rectangle(x, y, widthB, heightB, colorB));
 
   }
+
 }
 
 function draw() {
@@ -259,12 +271,7 @@ function draw() {
 
 
   }
-}
-
-
-
-function draw() {
-  background(255);
+  background('#000a0c');
   // Draw rectangle:
 
   for (let i = 0; i < rectangles.length; i++) {
@@ -278,7 +285,9 @@ function draw() {
 
   }
   pop();
+
 }
+
 
 class Rectangle {
   constructor(x, y, width, height, color) {
@@ -295,8 +304,15 @@ class Rectangle {
   }
 }
 
-
+//  // Add function for resizing window:
+//  function windowResized() {
+//   resizeCanvas(windowWidth, windowHeight);
+//   calculateImageProps();
+// }
 
 
 /* Code references:
 https://p5js.org/reference/#/p5/createButton
+
+
+*/
