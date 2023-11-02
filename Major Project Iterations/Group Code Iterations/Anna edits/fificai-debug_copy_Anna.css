@@ -1,0 +1,46 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+button {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  padding: 10px;
+  border-color: darkblue;
+}
+
+button:hover {
+  color:darkblue;
+  background-color:greenyellow;
+}
+
+#funky {
+  color: ivory;
+  background-color: teal;
+  position: ;
+}
+
+#cool {
+  color:white;
+  background-color: steelblue;
+}
+
+#stop {
+  color:darkblue;
+}
+
+body {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:darkcyan;
+  padding: 15px;
+}
+
+h2 {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color:darkblue;
+}
