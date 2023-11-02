@@ -2,46 +2,64 @@
 // Creative coding major project
 // Variation on Mondrian's 'Broadway Boogie Woogie'
 
+// Create variables to hold values for a button that - when clicked by the user - will play music:
+let button;
+let song;
 
 let number = 30;
 let rectSpacing = 10;
-const numberOfYellow = 8;
-const colors = ['#11077a', '#0a2ac9', '#0a4dc9'];
-const colors2 = ['#042f4d', '#08548a', '#0a7ac9'];
+const numberOfaqua = 8;
+const colors = ['#08527d', '#1678A2', '#093169'];
+const colors2 = ['#Bffbfd', '#083360', '#2a91a4'];
+// let sketchScale = 1;
+// let previousWindowWidth;
+// let previousWindowHeight;
 
 // Create arrays to store multiple classes of rectangles:
 let rectangles = [];
 let rectanglesBig = [];
 
-function setup() {
-  resizeCanvas(windowWidth, windowHeight);
+// A function to preload the music track to ensure it is loaded before the user clicks the button:
 
-  background('#03011a');
+function preload() {
+  song = loadSound()
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+
+  // Create button
+  button = createButton('click me');
+  button.position(0,0);
+  button.mousePressed(changeBG);
+
+  background('#000a0c');
 
   let y1 = random(0, 150);
   let y2 = y1;
 
-  // Top four yellow lines:
+  // Use width and height instead of width and height in rectangles below:
+  // Top four aqua lines:
   for (let i = 0; i < 4; i++) {
-    let yellowRectangle = new Rectangle(0, i * y1, windowWidth, 15, '#042f4d');
-    rectangles.push(yellowRectangle);
+    let aquaRectangle = new Rectangle(0, i * y1, width, 15, '#Bffbfd');
+    rectangles.push(aquaRectangle);
   }
-  // Last four horizontal yellow lines:
+  // Last four horizontal aqua lines:
   for (let i = 0; i < 4; i++) {
-    let yellowRectangle = new Rectangle(0, 250 + i * y1 * 2, windowWidth, 15, '#042f4d');
-    rectangles.push(yellowRectangle);
+    let aquaRectangle = new Rectangle(0, 250 + i * y1 * 2, width, 15, '#Bffbfd');
+    rectangles.push(aquaRectangle);
   }
 
 
-  // Left three vertical yellow lines:
+  // Left three vertical aqua lines:
   for (let i = 0; i < 3; i++) {
-    let yellowRectangle = new Rectangle(i * y1, 0, 15, windowHeight, '#042f4d');
-    rectangles.push(yellowRectangle);
+    let aquaRectangle = new Rectangle(i * y1, 0, 15, height, '#Bffbfd');
+    rectangles.push(aquaRectangle);
   }
-  // Right three vertical yellow lines:
+  // Right three vertical aqua lines:
   for (let i = 0; i < 3; i++) {
-    let yellowRectangle = new Rectangle(250 + i * y1 * 2, 0, 15, windowHeight, '#042f4d');
-    rectangles.push(yellowRectangle);
+    let aquaRectangle = new Rectangle(250 + i * y1 * 2, 0, 15, height, '#Bffbfd');
+    rectangles.push(aquaRectangle);
   }
 
   // Random small blocks:
@@ -171,6 +189,9 @@ function setup() {
   }
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
 
 function draw() {
   // Traverse the array and draw each rectangle:
@@ -218,7 +239,7 @@ function draw() {
 
 
 function draw() {
-  background(255);
+  background('#000a0c');
   // Draw rectangle:
 
   for (let i = 0; i < rectangles.length; i++) {
@@ -247,4 +268,9 @@ class Rectangle {
     fill(this.color);
     rect(this.x, this.y, this.width, this.height);
   }
+}
+
+function changeBG() {
+  let val = random(255);
+  background(val);
 }
