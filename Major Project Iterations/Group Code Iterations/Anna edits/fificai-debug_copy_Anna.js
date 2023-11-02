@@ -2,36 +2,43 @@
 // Creative coding major project
 // Variation on Mondrian's 'Broadway Boogie Woogie'
 
-// Create variables to hold values for a button that - when clicked by the user - will play music:
-let button;
-let song;
+//// Create variables to hold values for a button that - when clicked by the user - will play music:
+// let button;
+// let song;
 
 let number = 30;
 let rectSpacing = 10;
 const numberOfaqua = 8;
 const colors = ['#08527d', '#1678A2', '#093169'];
 const colors2 = ['#Bffbfd', '#083360', '#2a91a4'];
-// let sketchScale = 1;
-// let previousWindowWidth;
-// let previousWindowHeight;
 
 // Create arrays to store multiple classes of rectangles:
 let rectangles = [];
 let rectanglesBig = [];
 
-// A function to preload the music track to ensure it is loaded before the user clicks the button:
+//// A function to preload the music track to ensure it is loaded before the user clicks the button:
 
-function preload() {
-  song = loadSound()
-}
+// function preload() {
+//   song = loadSound('Anna edits/assets/audio/pixabay_juliusH_broadway-walk-big-band-music-4664.mp3');
+// }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  let canvas = createCanvas(windowWidth, windowHeight);
+  canvas.position =(400, 400); // Position canvas
 
-  // Create button
-  button = createButton('click me');
-  button.position(0,0);
-  button.mousePressed(changeBG);
+  // song.loop();
+
+  // // Create first button:
+  // button = createButton("Feeling funky? Click me.");
+  // button.position(20,30);
+  // button.background(255, 255, 255);
+  // button.mousePressed(changeBG);
+
+  // // Create second button:
+  // button = createButton("Feeling smooth and jazzy? Click me.")
+  // button.position(300,30);
+  // button.background(255, 255, 255);
+  // button.mousePressed(changeBG);
 
   background('#000a0c');
 
@@ -270,7 +277,29 @@ class Rectangle {
   }
 }
 
-function changeBG() {
-  let val = random(255);
-  background(val);
-}
+// function changeBG() {
+//   let colourOnClick = rgb(100, 100, 100);
+//   background(colourOnClick);
+// }
+
+// Create function for button to play music:
+  // if (song.isPlaying()) {
+  //   // .isPlaying() returns a boolean
+  //   song.pause(); // .play() will resume .pause() position
+  //   background(255, 255, 255);
+  // }
+  // else {
+  //   song.play();
+  //   background(255, 255, 255);
+  // }
+
+
+  /* References:
+
+  https://github.com/processing/p5.js/wiki/Beyond-the-canvas/5153b7ae243a8d685b511f8aaeca3bc8fa3ee0e8
+  https://editor.p5js.org/kjhollen/sketches/58WL8zYu1
+  https://p5js.org/reference/#/p5/createButton
+  https://p5js.org/examples/sound-preload-soundfile.html
+
+
+  */
