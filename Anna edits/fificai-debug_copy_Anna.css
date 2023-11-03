@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 10;
   padding: 0;
 }
@@ -7,8 +8,28 @@ canvas {
   display: block;
 }
 
+button {
+  background-color: darkturquoise;
+  color: navy;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  display: inline-block;
+  font-size: 14pt;
+  position: relative;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: aqua;
+}
+
+
 h2 {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color:darkcyan;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: darkcyan;
   text-align: center;
 }
+
+/* References:
+https://teamtreehouse.com/community/how-do-you-make-your-buttons-background-color-change-orange-when-you-hover-over-them -- Button on hover
+*/
