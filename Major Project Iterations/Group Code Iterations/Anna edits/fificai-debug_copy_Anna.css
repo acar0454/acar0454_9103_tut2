@@ -1,5 +1,5 @@
 html, body {
-  margin: 0;
+  margin: 10;
   padding: 0;
 }
 
@@ -16,13 +16,12 @@ button {
 
 button:hover {
   color:darkblue;
-  background-color:greenyellow;
+  background-color:darkturquoise;
 }
 
 #funky {
   color: ivory;
   background-color: teal;
-  position: ;
 }
 
 #cool {
@@ -34,13 +33,9 @@ button:hover {
   color:darkblue;
 }
 
-body {
+h2 {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color:darkcyan;
-  padding: 15px;
-}
-
-h2 {
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  color:darkblue;
+  padding: 5px;
+  text-align: center;
 }

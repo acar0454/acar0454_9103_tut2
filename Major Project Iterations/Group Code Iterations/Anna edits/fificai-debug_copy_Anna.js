@@ -4,7 +4,9 @@
 
 //// Create variables to hold values for a button that - when clicked by the user - will play music:
 // let button;
-// let song;
+let song;
+
+
 
 let number = 30;
 let rectSpacing = 10;
@@ -16,32 +18,22 @@ const colors2 = ['#Bffbfd', '#083360', '#2a91a4'];
 let rectangles = [];
 let rectanglesBig = [];
 
+
+
 //// A function to preload the music track to ensure it is loaded before the user clicks the button:
 
-// function preload() {
-//   song = loadSound('Anna edits/assets/audio/pixabay_juliusH_broadway-walk-big-band-music-4664.mp3');
-// }
+function preload() {
+  song = loadSound();
+}
 
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.position =(400, 400); // Position canvas
 
-  // song.loop();
-
-  // // Create first button:
-  // button = createButton("Feeling funky? Click me.");
-  // button.position(20,30);
-  // button.background(255, 255, 255);
-  // button.mousePressed(changeBG);
-
-  // // Create second button:
-  // button = createButton("Feeling smooth and jazzy? Click me.")
-  // button.position(300,30);
-  // button.background(255, 255, 255);
-  // button.mousePressed(changeBG);
+  song.loop();
 
   background('#000a0c');
-
+  //button.position(windowWidth/2);
   let y1 = random(0, 150);
   let y2 = y1;
 
@@ -276,11 +268,6 @@ class Rectangle {
     rect(this.x, this.y, this.width, this.height);
   }
 }
-
-// function changeBG() {
-//   let colourOnClick = rgb(100, 100, 100);
-//   background(colourOnClick);
-// }
 
 // Create function for button to play music:
   // if (song.isPlaying()) {
