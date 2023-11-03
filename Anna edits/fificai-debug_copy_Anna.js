@@ -5,7 +5,13 @@
 // Create variables to hold values for a button that - when clicked by the user - will play music:
 let song1;
 let song2;
-let button;
+// let funkyButton;
+// let jazzyButton;
+// let stopButton;
+
+// Create an array to hold the value of all three buttons:
+
+let buttons = newArray('song1', 'song2', ' ');
 let number = 30;
 let rectSpacing = 10;
 const numberOfaqua = 8;
@@ -16,23 +22,43 @@ const colors2 = ['#Bffbfd', '#083360', '#2a91a4'];
 let rectangles = [];
 let rectanglesBig = [];
 
-
-//// A function to preload the music track to ensure it is loaded before the user clicks the button:
+// A function to preload the music track to ensure it is loaded before the user clicks the button:
 
 function preload() {
-  song1 = loadSound('audio/pixabay_Musictown_funky-dance-pop-1-95460.mp3');
-  song2 = loadSound('audio/pixabay_juliusH_broadway-walk-big-band-music-4664.mp3')
+  song1 = loadSound('audio/pixabay_Musictown_funky-dance-pop-1-95460.mp3', loaded);
+  song2 = loadSound('audio/pixabay_juliusH_broadway-walk-big-band-music-4664.mp3', loaded);
 }
 
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.position = (400, 400); // Position canvas
+  preload();
+  button1 = createButton("Feeling funky? Click to play!");
+  button1.mousePressed(togglePlaying);
+  background(51);
 
-  song1.loop();
-  song2.loop();
+  // // A 'for' loop to space the buttons out evenly along the width of the window:
+  // for (let i = 0; i < buttons.length; i++); {
+  //   buttons[i] = new Button(i * 150 + 105, height / 4 - 25, 100, 50);
+  // }
+
+  // // Show all the buttons:
+  // for (let i = 0; i < buttons.length; i++) {
+  //   buttons[i].display();
+  // }
+
+  function togglePlaying() {
+    if (!song1.isPlaying()) {
+      song1.play();
+      song1.setVolume(0.3);
+      button1.html("Pause me")
+    } else {
+      song1.pause();
+      button1.html("Play that funky music!");
+    }
+  }
 
   background('#000a0c');
-  //button.position(windowWidth/2);
   let y1 = random(0, 150);
   let y2 = y1;
 
@@ -237,20 +263,26 @@ function draw() {
 
 
 function draw() {
-  background('#000a0c');
-  // Draw rectangle:
+  {
+    background('#000a0c');
+    // Draw rectangle:
 
-  for (let i = 0; i < rectangles.length; i++) {
-    rectangles[i].draw();
+    for (let i = 0; i < rectangles.length; i++) {
+      rectangles[i].draw();
+    }
+    push();
+    rectMode(CENTER);
+
+    for (let i = 0; i < rectanglesBig.length; i++) {
+      rectanglesBig[i].draw();
+
+    }
+    pop();
   }
-  push();
-  rectMode(CENTER);
 
-  for (let i = 0; i < rectanglesBig.length; i++) {
-    rectanglesBig[i].draw();
-
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].draw();
   }
-  pop();
 }
 
 class Rectangle {
@@ -268,42 +300,95 @@ class Rectangle {
   }
 }
 
-
-
-// 'if/else' for "funky" button to play music:
-  if (song1.isPlaying()) {
-    // .isPlaying() returns a boolean
-    song1.stop();
-    isPlaying = false;
-    noLoop();
-  }
-  else {
-    song1.play();
-    isPlaying = true;
-    loop();
+class Buttons {
+  constructor(x, y, width, height, color) {
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    this.color = color;
   }
 
-// 'if/else' for "jazzy" button to play music:
-  if (song2.isPlaying()) {
-    song2.stop();
-    isPlaying = false;
-    noLoop();
+  draw() {
+    fill(this.color);
+    button(this.x, this.y, this.width, this.height);
   }
-  else {
-    song2.play();
-    isPlaying = true;
-    loop();
+}
+
+
+// Create a function for when the mouse is pressed over the buttons:
+
+function mousePressed() {
+  // When the mouse is pressed, we must check every single button in the array:
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].click(mouseX, mouseY);
   }
+}
+
+// Variation on code copied from https://p5js.org/reference/#/p5/createButton:
+function funkyButton() {
+  let button = createButton('Feeling funky? Click me!');
+  button.style("font-size", "16px");
+  button.style("textFont", "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif'");
+  button.style("background", "#08527d");
+  button.position(300, 100);
+  button.mousePressed();
+}
+
+function jazzyButton() {
+  let button = createButton('Feeling jazzy? Click ME!');
+  button.style("font-size", "16px");
+  button.style("textFont", "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif'");
+  button.style("background", "#08527d");
+  button.position(300, 100);
+  button.mousePressed();
+}
+
+function stopButton() {
+  let button = createButton('Stop music');
+  button.style("font-size", "16px");
+  button.style("textFont", "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif'");
+  button.style("background", "#08527d");
+  button.position(300, 100);
+  button.mousePressed();
+}
+
+
+// // 'if/else' for "funky" button to play music:
+//   if (song1.isPlaying()) {
+//     // .isPlaying() returns a boolean
+//     song1.stop();
+//     isPlaying = false;
+//     noLoop();
+//   }
+//   else {
+//     song1.play();
+//     isPlaying = true;
+//     loop();
+//   }
+
+// // 'if/else' for "jazzy" button to play music:
+//   if (song2.isPlaying()) {
+//     song2.stop();
+//     isPlaying = false;
+//     noLoop();
+//   }
+//   else {
+//     song2.play();
+//     isPlaying = true;
+//     loop();
+//   }
 
 
 
 
-  /* References:
+/* References:
 
-  https://github.com/processing/p5.js/wiki/Beyond-the-canvas/5153b7ae243a8d685b511f8aaeca3bc8fa3ee0e8
-  https://editor.p5js.org/kjhollen/sketches/58WL8zYu1
-  https://p5js.org/reference/#/p5/createButton
-  https://p5js.org/examples/sound-preload-soundfile.html
+https://github.com/processing/p5.js/wiki/Beyond-the-canvas/5153b7ae243a8d685b511f8aaeca3bc8fa3ee0e8
+https://editor.p5js.org/kjhollen/sketches/58WL8zYu1
+https://p5js.org/reference/#/p5/createButton
+https://p5js.org/examples/sound-preload-soundfile.html
+https://editor.p5js.org/yining/sketches/ByLFGX5R // Button array and class code
 
 
-  */
+*/
