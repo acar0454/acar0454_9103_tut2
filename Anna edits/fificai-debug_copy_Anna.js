@@ -1,6 +1,6 @@
-// Tut 2, Group G
-// Creative coding major project
-// Variation on Mondrian's 'Broadway Boogie Woogie'
+// Tut 2, Group G - Huihui Cai, Han Zhang and Anna Carter
+// Creative Coding Major Project
+// Chosen artwork: Piet Mondrian's 'Broadway Boogie Woogie'
 
 // Create variables to hold values for buttons to play different music tracks on mouse press:
 let song1;
@@ -323,4 +323,8 @@ https://editor.p5js.org/kjhollen/sketches/58WL8zYu1
 Inspiration
 Blue Boogie by Paisley Cross, 4 October 2023, CC BY-NC-SA 3.0 DEED - code not copied or modified.
 https://openprocessing.org/sketch/2030919
+Audio
+song1: 'Funky Dance Pop 1'. Music by Musictown on Pixabay.
+song2: 'Big Apple - Jazzy Piano and Bass Music'. Music by JuliusH on Pixabay.
+song3: 'Lady of the 80s'. Music by Grand_Project on Pixabay.
 */
