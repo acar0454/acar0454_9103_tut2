@@ -107,13 +107,13 @@ function setup() {
 
   // Create small blocks positioned at random along the long, thin aqua rectangles:
 
-  // 2
+  // 1
   for (let i = 0; i < number; i++) {
     const randomBlue = blues[i % blues.length];
     let randomRectangle = new Rectangle(y2, i * (50 + rectSpacing), 15, 15, randomBlue);
     rectangles.push(randomRectangle);
   }
-  // 3
+  // 2
   for (let j = 0; j < 5; j++) {
     for (let i = 0; i < number; i++) {
       const randomBlue = blues[j % blues.length];
@@ -122,7 +122,7 @@ function setup() {
     }
   }
 
-  // 4
+  // 3
   for (let j = 0; j < 5; j++) {
     for (let i = 0; i < number; i++) {
       const randomBlue = blues[i % blues.length];
@@ -130,13 +130,13 @@ function setup() {
       rectangles.push(randomRectangle);
     }
   }
-  // 5
+  // 4
   for (let i = 0; i < number; i++) {
     const randomBlue = blues[i % blues.length];
     let randomRectangle = new Rectangle(250 + y1 * 2, i * (35 + rectSpacing), 15, 15, randomBlue);
     rectangles.push(randomRectangle);
   }
-  // 6
+  // 5
   for (let j = 0; j < 5; j++) {
     for (let i = 0; i < number; i++) {
       const randomBlue = blues[i % blues.length];
@@ -145,7 +145,7 @@ function setup() {
     }
   }
 
-  // 7
+  // 6
   for (let j = 0; j < number; j++) {
     for (let i = 0; i < number; i++) {
       const randomBlue = blues[i % blues.length];
@@ -153,13 +153,13 @@ function setup() {
       rectangles.push(randomRectangle);
     }
   }
-  // 8
+  // 7
   for (let i = 0; i < number; i++) {
     const randomBlue = blues[i % blues.length];
     let randomRectangle = new Rectangle(i * (30 + rectSpacing), y2, 15, 15, randomBlue);
     rectangles.push(randomRectangle);
   }
-  // 9
+  // 8
   for (let j = 0; j < number; j++) {
     for (let i = 0; i < number; i++) {
       const randomBlue = blues[i % blues.length];
@@ -167,32 +167,32 @@ function setup() {
       rectangles.push(randomRectangle);
     }
   }
-  // 10
+  // 9
   for (let i = 0; i < number; i++) {
     const randomBlue = blues[i % blues.length];
     let randomRectangle = new Rectangle(i * (30 + rectSpacing), y1 + y1 + y1, 15, 15, randomBlue);
     rectangles.push(randomRectangle);
   }
 
-  // 11
+  // 10
   for (let i = 0; i < number; i++) {
     const randomBlue = blues[i % blues.length];
     let randomRectangle = new Rectangle(i * (60 + rectSpacing), 250, 15, 15, randomBlue);
     rectangles.push(randomRectangle);
   }
-  // 12
+  // 11
   for (let i = 0; i < number; i++) {
     const randomBlue = blues[i % blues.length];
     let randomRectangle = new Rectangle(i * (30 + rectSpacing), 250 + y1 * 2, 15, 15, randomBlue);
     rectangles.push(randomRectangle);
   }
-  // 13
+  // 12
   for (let i = 0; i < number; i++) {
     const randomBlue = blues[i % blues.length];
     let randomRectangle = new Rectangle(i * (50 + rectSpacing), 250 + y1 * 2 + y1 * 2, 15, 15, randomBlue);
     rectangles.push(randomRectangle);
   }
-  // 14
+  // 13
   for (let i = 0; i < number; i++) {
     const randomBlue = blues[i % blues.length];
     let randomRectangle = new Rectangle(i * (40 + rectSpacing), 250 + y1 * 2 + y1 * 2 + y1 * 2, 15, 15, randomBlue);
@@ -239,8 +239,8 @@ function draw() {
 
   // Draw small blocks at randomised position and colour along the aqua lines:
   for (let i = 0; i < numberofAqua; i++) {
-    let redRectangle = new Rectangle(random(20, 100), 20, 20, 20, 'red');
-    rectangles.push(redRectangle);
+    let blueBlock = new Rectangle(random(20, 100), 20, 20, 20, 'red');
+    rectangles.push(blueBlock);
   }
   rectangles.push(new Rectangle(200, 100, 20, 20, 'blue'));
   rectangles.push(new Rectangle(100, 50, 20, 20, 'grey'));
