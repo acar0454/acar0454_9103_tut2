@@ -2,12 +2,18 @@
 // Creative coding major project
 // Variation on Mondrian's 'Broadway Boogie Woogie'
 
-//// Create variables to hold values for a button that - when clicked by the user - will play music:
-// let button;
-let song;
+// Create variables to hold values for buttons to play different music tracks on mouse press:
+let song1;
+let song2;
+let button1;
+let button2;
 
+function preload() {
+  song1 = loadSound('libraries/audio/pixabay_Musictown_funky-dance-pop-1-95460.mp3');
+  song2 = loadSound('libraries/audio/pixabay_juliusH_big-apple-jazzy-piano-and-bass-music-13305.mp3');
+}
 
-
+// Create variables to hold values for creating rectangles:
 let number = 30;
 let rectSpacing = 10;
 const numberOfaqua = 8;
@@ -18,22 +24,40 @@ const colors2 = ['#Bffbfd', '#083360', '#2a91a4'];
 let rectangles = [];
 let rectanglesBig = [];
 
-
-
-//// A function to preload the music track to ensure it is loaded before the user clicks the button:
-
-function preload() {
-  song = loadSound();
-}
-
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
-  canvas.position =(400, 400); // Position canvas
+  canvas.position = (400, 400); // Position canvas
+  
+  // Create buttons to play different music:
+  button1 = createButton("Feeling funky? Click to play!");
+  button1.mousePressed(togglePlaying);
 
-  song.loop();
+  function togglePlaying() {
+    if (song1.isPlaying()) {
+      song1.pause();
+      button1.html("Play that funky music!");
+    } else {
+      song1.play();
+      song1.setVolume(0.3);
+      button1.html("Pause");
+    }
+  }
+
+  button2 = createButton("Feeling jazzy? Click to play ME!");
+  button2.mousePressed(togglePlayingAgain);
+
+  function togglePlayingAgain() {
+    if (!song2.isPlaying()) {
+      song2.play();
+      song2.setVolume(0.3);
+      button2.html("Pause me");
+    } else {
+      song2.pause();
+      button2.html("More jazz please!");
+    }
+  }
 
   background('#000a0c');
-  //button.position(windowWidth/2);
   let y1 = random(0, 150);
   let y2 = y1;
 
@@ -238,20 +262,26 @@ function draw() {
 
 
 function draw() {
-  background('#000a0c');
-  // Draw rectangle:
+  {
+    background('#000a0c');
+    // Draw rectangle:
 
-  for (let i = 0; i < rectangles.length; i++) {
-    rectangles[i].draw();
+    for (let i = 0; i < rectangles.length; i++) {
+      rectangles[i].draw();
+    }
+    push();
+    rectMode(CENTER);
+
+    for (let i = 0; i < rectanglesBig.length; i++) {
+      rectanglesBig[i].draw();
+
+    }
+    pop();
   }
-  push();
-  rectMode(CENTER);
 
-  for (let i = 0; i < rectanglesBig.length; i++) {
-    rectanglesBig[i].draw();
-
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].draw();
   }
-  pop();
 }
 
 class Rectangle {
@@ -269,24 +299,10 @@ class Rectangle {
   }
 }
 
-// Create function for button to play music:
-  // if (song.isPlaying()) {
-  //   // .isPlaying() returns a boolean
-  //   song.pause(); // .play() will resume .pause() position
-  //   background(255, 255, 255);
-  // }
-  // else {
-  //   song.play();
-  //   background(255, 255, 255);
-  // }
-
-
-  /* References:
-
-  https://github.com/processing/p5.js/wiki/Beyond-the-canvas/5153b7ae243a8d685b511f8aaeca3bc8fa3ee0e8
-  https://editor.p5js.org/kjhollen/sketches/58WL8zYu1
-  https://p5js.org/reference/#/p5/createButton
-  https://p5js.org/examples/sound-preload-soundfile.html
-
-
-  */
+/* References:
+https://github.com/processing/p5.js/wiki/Beyond-the-canvas/5153b7ae243a8d685b511f8aaeca3bc8fa3ee0e8
+https://editor.p5js.org/kjhollen/sketches/58WL8zYu1
+https://p5js.org/reference/#/p5/createButton
+https://p5js.org/examples/sound-preload-soundfile.html
+https://www.youtube.com/watch?v=YcezEwOXun4 (Buttons to play music)
+*/
