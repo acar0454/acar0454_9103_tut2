@@ -78,8 +78,9 @@ function setup() {
   }
 
   background('#000a0c');
-//the line will appear at random y position
-// little rectangles will draw on the lines, so they have same y position 
+
+// The line will appear at random y position
+// Little rectangles will draw on the lines, so they have same y position 
 
   let y1 = random(0, 150);
   let y2 = y1;
@@ -88,7 +89,7 @@ function setup() {
 
   // Upper four aqua lines (long, thin rectangles):
   for (let i = 0; i < 4; i++) {
-    let aquaRectangle = new Rectangle(0, i * y1, width, 15, '#Bffbfd');
+    let aquaRectangle = randomRectangle(0, i * y1, width, 15, '#Bffbfd');
     rectangles.push(aquaRectangle);
   }
   // Lower four horizontal aqua lines:
@@ -256,7 +257,7 @@ function draw() {
   }
 }
 
-class Rectangle {
+class Car {
   constructor(x, y, width, height, color) {
     this.x = x;
     this.y = y;
@@ -288,3 +289,9 @@ song1: 'Funky Dance Pop 1'. Music by Musictown on Pixabay.
 song2: 'Big Apple - Jazzy Piano and Bass Music'. Music by JuliusH on Pixabay.
 song3: 'Lady of the 80s'. Music by Grand_Project on Pixabay.
 */
+
+
+// CHANGE LOG:
+// * Changed all 'randomRectangle' to 'carRectangle' (static small blocks along aqua lines to become
+// small blocks that move at different speeds). 
+// * Changed all 'new Rectangle' to 'new Car', and 'class Rectangle' to 'class Car'.
