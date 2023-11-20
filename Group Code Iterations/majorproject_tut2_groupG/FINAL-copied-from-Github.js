@@ -78,6 +78,9 @@ function setup() {
   }
 
   background('#000a0c');
+//the line will appear at random y position
+// little rectangles will draw on the lines, so they have same y position 
+
   let y1 = random(0, 150);
   let y2 = y1;
 
@@ -234,52 +237,9 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-function draw() {
-  // Traverse the array and draw each rectangle:
-
-  // Draw small blocks at randomised position and colour along the aqua lines:
-  for (let i = 0; i < numberofAqua; i++) {
-    let blueBlock = new Rectangle(random(20, 100), 20, 20, 20, 'red');
-    rectangles.push(blueBlock);
-  }
-  rectangles.push(new Rectangle(200, 100, 20, 20, 'blue'));
-  rectangles.push(new Rectangle(100, 50, 20, 20, 'grey'));
-  rectangles.push(new Rectangle(100, 250, 150, 20, 'yellow'));
-  noStroke();
-
-
-  for (let i = 0; i < 15; i++) {
-    // Randomly generate the position, size, and colour of block A:
-
-    let x = random(width);
-    let y = random(height);
-    let widthA = random(30, 50);
-    let heightA = random(30, 50);
-
-    // Randomly generate the size of blocks B and C:
-    let widthB = widthA - random(10, 20);
-    let heightB = heightA - random(10, 20);
-    let widthC = widthA + random(10, 20);
-    let heightC = heightA + random(10, 20);
-
-    // Randomly generate colours from blues2 array:
-
-    let colorA = random(blues2);
-    let colorB = random(blues2);
-    let colorC = random(blues2);
-
-    // Create a block object and add it to an array:
-
-    rectanglesBig.push(new Rectangle(x, y, widthC, heightC, colorC));
-    rectanglesBig.push(new Rectangle(x, y, widthA, heightA, colorA));
-    rectanglesBig.push(new Rectangle(x, y, widthB, heightB, colorB));
-
-  }
-}
-
 
 function draw() {
-  {
+  
     background('#000a0c');
     // Draw rectangle:
 
@@ -293,7 +253,7 @@ function draw() {
       rectanglesBig[i].draw();
     }
     pop();
-  }
+  
 }
 
 class Rectangle {
