@@ -318,20 +318,10 @@ Audio
 song1: 'Funky Dance Pop 1'. Music by Musictown on Pixabay.
 song2: 'Big Apple - Jazzy Piano and Bass Music'. Music by JuliusH on Pixabay.
 song3: 'Lady of the 80s'. Music by Grand_Project on Pixabay.
-*/
-
-
-/* CHANGE LOG:
-
-Tues 14 Nov
-* Changed 'rectSpacing' variable to 'carSpacing'.
-* Changed 'aquaRectangle' to 'aquaRoad'.
-* Changed 'randomRectangle' to 'randomCar'.
-* DID NOT CHANGE 'new Rectangle' because the first four 'for' loops refer to the 'roads'
-and the rest refer to cars. Do you need separate variables names/classes?
-* Changed 'blues' array to 'blueCars'.
-* Changed 'blues2' array to 'blueCars2'.
-* Changed 'number' to 'numberOfCars'.
-* Changed 'colorA', 'colorB' and 'colorC' to 'carColourA', 'carColourB' and 'carColourC' respectively.
-* Commented out //1 - //13 so small blocks (i.e. static 'cars') disappear in Live Server preview.
+Code
+p5.js Web Editor example - https://editor.p5js.org/enickles/sketches/ZbCusCZtN 
+Week 7 Lecture - https://canvas.sydney.edu.au/courses/53019/pages/week-7-lecture?module_item_id=2098596
+p5.js example 'Car instances' - https://p5js.org/examples/objects-car-instances.html
+The Coding Train - "7.3 Arrays of Objects - p5.js Tutorial" - https://youtu.be/F3GeM_KrGjI?si=Z6ujMeeg0RReV54k
+The Coding Train - "7.4 The Constructor Function in JavaScript - p5.js Tutorial" - https://youtu.be/F3GeM_KrGjI?si=3qHp1xtw3r8DHz6e
 */
