@@ -188,7 +188,7 @@ function windowResized() {
 function draw() {
 
   // Display and move all cars in the array
-  // Draw roads, cars and blocks:
+  // Draw roads, cars (horizontal- and vertical-axis) and blocks:
 
   for (let i = 0; i < roads.length; i++) {
     roads[i].draw();
@@ -203,14 +203,18 @@ function draw() {
   }
   push();
 
+  for (let i = 0; i < cars2.length; i++) {
+    cars2[i].display();
+    cars2[i].move();
+  }
+  push();
+
   rectMode(CENTER);
   for (let i = 0; i < blocks.length; i++) {
     blocks[i].draw();
   }
   pop();
 }
-
-
 
 class Rectangle {
   constructor(x, y, width, height, color) {
