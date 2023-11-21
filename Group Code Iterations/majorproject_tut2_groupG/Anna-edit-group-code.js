@@ -113,7 +113,7 @@ function setup() {
 
   for (let i = 0; i < numberOfCars; i++) {
     const randomBlue = blueCars[i % blueCars.length];
-    
+
     // Create a new Car instance and push it to the 'cars' array
     const newCar = new Car(0, i * y1, randomBlue);
     newCar.start(random(-2, 2)); // Set a random speed between -2 and 2
@@ -135,12 +135,12 @@ function draw() {
   }
   push();
   rectMode(CORNER);
-  console.log(roads[i]);
+  console.log(roads);
 
   for (let i = 0; i < cars.length; i++) {
     cars[i].display();
     cars[i].move();
-    console.log(cars[i]);
+    console.log(cars);
   }
 
 }
