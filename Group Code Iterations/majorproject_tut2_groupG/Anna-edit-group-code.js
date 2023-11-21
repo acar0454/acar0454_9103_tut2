@@ -1,6 +1,6 @@
-// Tut 2, Group G - Huihui Cai, Han Zhang and Anna Carter
-// Creative Coding Major Project
-// Chosen artwork: Piet Mondrian's 'Broadway Boogie Woogie'
+// Anna Carter
+// Individual Task: Creative Coding Major Project
+// Based on Group Code submitted by Group G, Tut 2
 
 // Create variables to hold values for buttons to play different music tracks on mouse press:
 let song1;
@@ -28,10 +28,20 @@ let roads = [];
 let cars = []; // Cars travelling along horizontal-axis 
 let cars2 = []; // Cars travelling along vertical-axis
 let blocks = [];
+let bgState = true; // Code based on reference: The Coding Train - https://www.youtube.com/watch?v=CqDqHiamRHA
 
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.position = (200, 200); // Position the canvas
+
+setInterval(changeBgState, random(500, 9000));
+
+function changeBgState() {
+  console.log("Lightning flashes!");
+
+// Change the boolean to the opposite // Code based on reference: The Coding Train - https://www.youtube.com/watch?v=CqDqHiamRHA:
+  bgState = !bgState;
+}
 
   // Create buttons to play different music:
   button1 = createButton("Take me to funkytown");
@@ -138,7 +148,7 @@ function setup() {
     const randomBlue = blueCars[i % blueCars.length];
     const newCar = new Car2(i * y1, 0, randomBlue);
     cars2.push(newCar);
-    newCar.start(random(-2, 2)); // Set a random speed between -2 and 2
+    newCar.start(random(-3,-1)); // Set a random speed between -3 and -1.
   }
 
   // 4
@@ -146,9 +156,10 @@ function setup() {
     const randomBlue = blueCars[i % blueCars.length];
     const newCar = new Car2(250 + i * y1 * 2, 0, randomBlue);
     cars2.push(newCar);
-    newCar.start(random(-2, 2)); // Set a random speed between -2 and 2
+    newCar.start(random(1, 3)); // Set a random speed between 1 and 3.
   }
 
+// Create 'blocks' from layered rectangles, randomly coloured and placed on the canvas:
 
   for (let i = 0; i < 15; i++) {
 
@@ -179,13 +190,18 @@ function setup() {
   noStroke();
 }
 
-
-
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
+
+// When the sketch starts, the background is dark, but is timed to flash like lightning, periodically:
+  if (bgState) {
+    background('#000a0c');
+  } else {
+    background(random(255));
+  }
 
   // Display and move all cars in the array
   // Draw roads, cars (horizontal- and vertical-axis) and blocks:
@@ -195,7 +211,6 @@ function draw() {
   }
   push();
   rectMode(CORNER);
-
 
   for (let i = 0; i < cars.length; i++) {
     cars[i].display();
