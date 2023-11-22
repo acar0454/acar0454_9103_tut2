@@ -1,3 +1,5 @@
+// Final Group Code submission copied from GitHub
+
 // Tut 2, Group G - Huihui Cai, Han Zhang and Anna Carter
 // Creative Coding Major Project
 // Chosen artwork: Piet Mondrian's 'Broadway Boogie Woogie'
